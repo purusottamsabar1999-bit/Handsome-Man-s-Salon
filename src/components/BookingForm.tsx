@@ -77,6 +77,30 @@ export default function BookingForm({ services, barbers, selectedServiceId, onBo
       const data = await response.json();
 
       if (response.ok) {
+        // Forward submission to Formspree
+        try {
+          await fetch("https://formspree.io/f/xkoadddl", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Accept": "application/json"
+            },
+            body: JSON.stringify({
+              name,
+              phone,
+              email,
+              service: getServiceName(serviceId),
+              date,
+              time,
+              notes,
+              barber: barbers.find(b => b.id === barberId)?.name || "Any Barber",
+              _subject: `New Salon Appointment Blocked: ${name}`
+            })
+          });
+        } catch (fError) {
+          console.error("Formspree forward error:", fError);
+        }
+
         setSuccess(true);
         setConfirmationReceipt(data.appointment);
         // Clear inputs
