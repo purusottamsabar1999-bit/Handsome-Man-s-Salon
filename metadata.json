@@ -1,0 +1,8 @@
+{
+  "name": "Remix: HANDSOME Man\u0027s Salon",
+  "description": "A high-end, visual-forward website for HANDSOME Man\u0027s Salon featuring interactive booking, custom team rosters, services catalogs, and a comprehensive booking manager.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
