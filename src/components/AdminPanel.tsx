@@ -228,9 +228,9 @@ export default function AdminPanel({ services, barbers, reviews, onRefreshData }
   // If NOT Authenticated, render minimal polished login page
   if (!token) {
     return (
-      <section id="admin-login-layout" className="py-24 bg-stone-950 flex justify-center items-center font-sans px-4">
-        <div className="w-full max-w-md bg-stone-900 border border-stone-850 p-8 rounded-2xl shadow-2xl relative">
-          <div className="absolute top-0 left-0 right-0 h-1 bg-amber-500 rounded-t-2xl" />
+      <section id="admin-login-layout" className="min-h-[75vh] bg-stone-950 flex justify-center items-center font-sans px-4 py-12">
+        <div className="w-full max-w-md bg-stone-900 border border-stone-850 p-8 rounded-2xl shadow-2xl relative flex flex-col justify-center animate-fadeIn overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-amber-500" />
           
           <div className="text-center space-y-3 mb-8">
             <div className="mx-auto w-12 h-12 bg-amber-500/10 rounded-xl flex items-center justify-center border border-amber-500/20 text-amber-500">
